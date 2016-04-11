@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Superfast Angular 2 setup</title>
+    <base href="/">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="/libs/angular2-polyfills.js"></script>
+    <script src="/libs/system.js"></script>
+    <script src="/libs/typescript.js"></script>
+    <script src="/libs/Rx.js"></script>
+    <script src="/libs/angular2.dev.js"></script>
+    <script src="/libs/router.dev.js"></script>
+    <script>
+    System.config({
+      transpiler: 'typescript',
+      typescriptOptions: {
+        emitDecoratorMetadata: true
+      },
+      map: {
+        app: './js'
+      },
+      packages: {
+        app: {
+          main: './main.ts',
+          defaultExtension: 'ts'
+        }
+      }
+    });
+    System
+      .import('app')
+      .catch(console.error.bind(console));
+    </script>
+  </head>
+  <body>
+    <my-app>
+      Loading...
+    </my-app>
+  </body>
+</html>
